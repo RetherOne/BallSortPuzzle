@@ -1,18 +1,24 @@
-import main as comand
-import pygame
+import main
+import pygame as pg
 import sys
-import tkinter as tk
 
-root = tk.Tk()
-screen_width = root.winfo_screenwidth()
-screen_height = root.winfo_screenheight()
 
-pygame.init()
-pygame.display.set_mode((screen_width/2, screen_height/2))
+# generation_map = []
+
+pg.init()
+
+screen = pg.display.set_mode((main.screen_width/2, main.screen_height/2))
+
+background = pg.image.load("textures\\backgrounds\\background.jpg")
+background = pg.transform.scale(background, (main.screen_width/2, main.screen_height/2))
+screen.blit(background, (0, 0))
+
 
 while True:
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            pg.quit()
             sys.exit()
+
+    pg.display.update()

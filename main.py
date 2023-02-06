@@ -1,8 +1,15 @@
 import random
+import tkinter as tk
+
+
+root = tk.Tk()
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
 
 
 def generator(heigth, columns, array_2d):
-    colors = ["red", "white", "yellow", "blue", "green", "purple", "violet", "pink", "orange", "brown"]
+    colors = ["red", "white", "yellow", "blue", "green", "purple", "pink", "orange", "brown"]
     accept_colors = []
 
     for i in range(columns-2):
